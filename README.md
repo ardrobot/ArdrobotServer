@@ -14,7 +14,7 @@ This file will let you spin-up a local Ardrobot Server to test bots over the loc
 10. Note the IP address of the server that is printed to the screen.  This is the address you will use to connect from VPN and VNC.
 11. Optional (for development): We have set a default password of "asd123" to use for VNC connections.  To update this ssh in the server with `vagrant ssh ardrobotserver` and run `sudo vncpasswd /home/vagrant/.vnc/passwd` to change to a new 6-8 character password.
 
-*(IMPORTANT: I have included client/server OpenVPN keys in this repo for local testing purposes only!  If we didn't use hard-coded keys for testing, we would need to update Android's VPN files each time we launched a new server with the current configuration; dramatically slowing development speed.  Deployment on internet accessible servers of any type will require the generation of new secure keys as described by OpenVPN.)*
+*(**IMPORTANT**: I have included client/server OpenVPN keys in this repo for local testing purposes only!  If we didn't use hard-coded keys for testing, we would need to update Android's VPN files each time we launched a new server with the current configuration; dramatically slowing development speed.  Deployment on internet accessible servers of any type will require the generation of new secure keys as described by OpenVPN.)*
 
 
 ## Stopping and Suspending the Server
