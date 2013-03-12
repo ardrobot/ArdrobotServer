@@ -1,3 +1,27 @@
+#!/bin/bash
+
+# @name Ardrobot Server
+# @brief Launch scripts for the Ardrobot Server
+# @copyright (C) 2013 Ardrobot
+# @author Todd Sampson
+# @version 0.4
+# @date 2013-03-11
+# 
+# This program is free software: you can redistribute it and/or modify
+# it under the terms of the GNU Affero General Public License as
+# published by the Free Software Foundation, either version 3 of the
+# License, or (at your option) any later version.
+# 
+# This program is distributed in the hope that it will be useful,
+# but WITHOUT ANY WARRANTY; without even the implied warranty of
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+# GNU Affero General Public License for more details.
+# 
+# You should have received a copy of the GNU Affero General Public License
+# along with this program.  If not, see <http://www.gnu.org/licenses/>.
+
+
+# Install OpenVPN
 apt-get install -y openvpn
 modprobe iptable_nat
 echo 1 | tee /proc/sys/net/ipv4/ip_forward
@@ -13,11 +37,11 @@ chmod 644 /etc/openvpn/easy-rsa/vars
 ln -s /etc/openvpn/easy-rsa/openssl-1.0.0.cnf /etc/openvpn/easy-rsa/openssl.cnf
 . /etc/openvpn/easy-rsa/vars
 /etc/openvpn/easy-rsa/clean-all
-#cd /etc/openvpn/easy-rsa
-#./build-ca
-#./build-key-server ardrobot-server
-#./build-dh
-#./build-key client1
+# cd /etc/openvpn/easy-rsa
+# ./build-ca
+# ./build-key-server ardrobot-server
+# ./build-dh
+# ./build-key client1
 
 # Copy files to keys directory
 cp /srv/ArdrobotServer/cookbooks/ardrobot-server/templates/default/01.pem.erb /etc/openvpn/easy-rsa/keys/01.pem

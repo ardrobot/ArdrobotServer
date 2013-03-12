@@ -1,6 +1,6 @@
 maintainer        "Ardrobot"
 maintainer_email  "todd@ardrobot.com"
 name              "ardrobot-server"
-version           "0.1.3"
+version           "0.4.3"
 depends           "application"
 depends           "application_ruby"
