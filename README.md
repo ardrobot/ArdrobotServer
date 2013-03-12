@@ -4,8 +4,8 @@ This file will let you spin-up a local Ardrobot Server to test bots over the loc
 
 1. Install the latest version of [VirtualBox](https://www.virtualbox.org/wiki/Downloads) if you do not currently have it installed.
 2. Next, install the latest version of [Vagrant](http://downloads.vagrantup.com/) if it is not currently installed.  Make sure "/opt/vagrant/bin" was added to your path.
-3. Change to the /srv directory: `cd /srv` (Run `mkdir /srv` if the directory doesn't exist.)
-4. Clone the Ardrobot Server repo from Github: `git clone git@github.com:ardrobot/ArdrobotServer.git /srv/ArdrobotServer`
+3. Change to the /srv directory: `cd /srv` (Run `sudo mkdir /srv` and `sudo chmod 777 /srv` if the directory doesn't exist.)
+4. Clone the Ardrobot Server repo from Github: `git clone git@github.com:ardrobot/ArdrobotServer.git /srv/ArdrobotServer`  (If you don't have git installed, follow the [Github setup instructions](https://help.github.com/articles/set-up-git) then [add your ssh keys here](https://github.com/settings/ssh))
 5. Change to the ArdrobotServer directory: `cd ArdrobotServer`
 6. Initialize and fetch the submodules with: `git submodule init` and `git submodule update`
 7. If you are not running on a Mac, edit the network connector in Vagrantfile.
