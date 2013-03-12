@@ -20,6 +20,7 @@
 
 
 Vagrant::Config.run do |config|
+  config.vm.box_url = "http://files.vagrantup.com/precise32.box"
 
   config.vm.define :ardrobotserver do |ardrobotserver|
     ardrobotserver.vm.box = "precise32"
