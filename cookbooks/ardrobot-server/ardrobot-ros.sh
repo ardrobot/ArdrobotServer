@@ -36,4 +36,5 @@ echo "export ROS_MASTER_URI=\"http://10.8.0.1:11311\"" >> /home/vagrant/.bashrc
 echo "export ROS_IP=10.8.0.1" >> /home/vagrant/.bashrc
 . /home/vagrant/.bashrc
 sudo apt-get install -y python-rosinstall python-rosdep
+sudo apt-get install -y ros-fuerte-pr2-teleop-app
 

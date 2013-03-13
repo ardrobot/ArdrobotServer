@@ -17,12 +17,38 @@ This file will let you spin-up a local Ardrobot Server to test bots over the loc
 (**IMPORTANT**: *I have included client/server OpenVPN keys in this repo for local testing purposes only!  If we didn't use hard-coded keys for testing, we would need to update Android's VPN files each time we launched a new server with the current configuration; dramatically slowing development speed.  Deployment on internet accessible servers of any type will require the generation of new secure keys as described by OpenVPN.*)
 
 
-## Stopping and Suspending the Server
+## Ardrobot Server Computer Pilot Interface (VNC)
+
+1. Install a VNC client, such as [Chicken of the VNC](http://sourceforge.net/projects/cotvnc/), if you do not already have one on your computer.
+2. Open your VCN client and set the following:
+    - Optional: Click the + button to create a new saved profile.
+    - Set the Host to the IP address you received in step 10 above. If you don't have the IP address, see [Determining the Ardrobot Server IP Address below](https://github.com/ardrobot/ArdrobotServer#ardrobot-server-pilot-interface-vnc).
+    - Enter 1 for the Display.
+    - Enter the VNC password you set in step 11 above.  If you did not change the password, enter the default "asd123" password.
+    - Unless you need any additional changes, leave the other settings as default
+3. Click the "Connect" button to initiate the server connection.
+4. If you are presented with the server's terminal instead of the visual desktop environment, start the desktop by running `nohup gnome-session &`
+5. Next, you will need to start the ROS Master core service by running: `roscore`
+6. At this point, you can now connect to the Ardrobot Server from the Ardrobot Android client.
+7. Once the Android device is connected, you can view the video feed from the Android camera by running `rosrun image_view image_view image:=/camera/image compressed` from a new terminal tab (`shift + control + T`).
+5. To send commands to pilot the bot, open yet another tab (`shift + control + T`) and run: `rosrun pr2_teleop teleop_pr2_keyboard`
+
+
+## Ardrobot Server Table Pilot Interface
 
 *Coming soon*
 
 
-## Ardrobot Server Pilot Interface (VNC)
+
+## Determining the Ardrobot Server IP Address
+
+1. Open terminal and connect to the Ardrobot Server using `vagrant ssh ardrobotserver`
+2. Once connected to the server, run: `ifconfig`
+3. Look for the ethernet adapter that has the IP address that matches your local network -- in most cases, this will be eth1.
+4. Under the ethernet adapter, look for `inet address:`.  That will be the value you should use for VPN and VNC connections.
+
+
+## Stopping and Suspending the Server
 
 *Coming soon*
 
